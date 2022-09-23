@@ -1,0 +1,39 @@
+{
+  "name": "vite-ts-json-schema-generator",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "npm run build -- --watch",
+    "build": "rimraf ./dist && tsup src/index.ts --format esm --dts",
+    "test": "vitest"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "ts-json-schema-generator",
+    "ts-to-json-schema"
+  ],
+  "author": "Lucifurry",
+  "license": "MIT",
+  "peerDependencies": {
+    "vite": "^2.9.0"
+  },
+  "dependencies": {
+    "ts-json-schema-generator": "^1.1.1"
+  },
+  "devDependencies": {
+    "module-from-string": "^3.3.0",
+    "rimraf": "^3.0.2",
+    "tsup": "^6.2.3",
+    "vitest": "^0.23.4"
+  }
+}
