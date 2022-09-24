@@ -52,7 +52,7 @@ function handleFile(cfg: TJSGConfig): {
   return { code, exportedNames };
 }
 
-export default function viteTsJsonSchemaGenerator(config?: IConfig): Plugin {
+export default function typeToSchema(config?: IConfig): Plugin {
   const root = process.cwd();
   const cfg = resolveConfig(config, root);
   const { suffix, options, dts } = cfg;

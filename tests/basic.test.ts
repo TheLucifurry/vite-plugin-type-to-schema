@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 import { describe, expect, it } from 'vitest'
-import viteTsJsonSchemaGenerator from '../src';
+import typeToSchema from '../src';
 import { importFromString } from 'module-from-string'
 import { getExportedTypeNames } from '../src/getExportedTypeNames';
 
@@ -11,7 +11,7 @@ export interface IMockVitePlugin {
 
 describe('basic', () => {
   it('to have only the schemas of types (and interfaces), that was exported', async () => {
-    const plugin = viteTsJsonSchemaGenerator() as IMockVitePlugin
+    const plugin = typeToSchema() as IMockVitePlugin
 
     // Imitate plugin call by Vite
     const id: string = resolve(__dirname, './fixtures/type?schema')
@@ -24,7 +24,7 @@ describe('basic', () => {
   })
 
   it('custom suffix', async () => {
-    const plugin = viteTsJsonSchemaGenerator({
+    const plugin = typeToSchema({
       suffix: '?custom-suffix',
     }) as IMockVitePlugin
 
@@ -39,7 +39,7 @@ describe('basic', () => {
   })
 
   it('types, that uses imported types', async () => {
-    const plugin = viteTsJsonSchemaGenerator() as IMockVitePlugin
+    const plugin = typeToSchema() as IMockVitePlugin
 
     // Imitate plugin call by Vite
     const id: string = resolve(__dirname, './fixtures/importer?schema')

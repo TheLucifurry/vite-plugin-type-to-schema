@@ -1,2 +1,2 @@
-export const NAME = 'vite-ts-json-schema-generator';
+export const NAME = 'vite-plugin-type-to-schema';
 export const ERROR_PREFIX = `[${NAME}]: `;

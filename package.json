@@ -1,5 +1,5 @@
 {
-  "name": "vite-ts-json-schema-generator",
+  "name": "vite-plugin-type-to-schema",
   "version": "0.0.1",
   "description": "",
   "type": "module",
@@ -21,6 +21,8 @@
   "keywords": [
     "vite",
     "vite-plugin",
+    "type-to-schema",
+    "vite-plugin-type-to-schema",
     "ts-json-schema-generator",
     "ts-to-json-schema"
   ],

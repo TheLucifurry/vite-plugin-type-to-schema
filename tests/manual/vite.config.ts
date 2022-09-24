@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import viteTsJsonSchemaGenerator from '../../src';
+import typeToSchema from '../../src';
 
 export default {
   build: {
@@ -10,6 +10,6 @@ export default {
     }
   },
   plugins: [
-    viteTsJsonSchemaGenerator(),
+    typeToSchema(),
   ],
 }
