@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "npm run build -- --watch",
     "build": "rimraf ./dist && tsup src/index.ts --format esm --dts",
-    "test": "vitest"
+    "test": "vitest --watch"
   },
   "keywords": [
     "vite",
