@@ -6,13 +6,32 @@ export type IMockJSONSchema = {
   definitions: object
   [key: string]: any
 }
+
 export type TJSGConfig = TJSGConfigOrig
+
 export type IConfig = {
-  suffix: `?${string}`
+  /**
+   * Import path suffix
+   */
+  suffix?: `?${string}`
+
+  /**
+   * `false` - don't generate dts file;
+   * `path as string` - generate by that path and name
+   */
+  dts?: string | boolean
+
+  /**
+   * parser options
+   * @see https://github.com/vega/ts-json-schema-generator#options
+   */
   options?: Partial<Omit<TJSGConfigOrig, 'path' | 'type'>>
-}
+};
 
-export interface IMockVitePlugin { // TODO: replace by "import type { Plugin } from 'vite';"
-  load(id: string): string
-}
+export type IConfigResolved = Required<IConfig & {
+  dts: string | false
+}>
 
+export type ISchemaFilesMetaList = Record<string, {
+  exports: string[]
+}>

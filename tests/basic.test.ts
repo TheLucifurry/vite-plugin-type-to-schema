@@ -3,7 +3,11 @@ import { describe, expect, it } from 'vitest'
 import viteTsJsonSchemaGenerator from '../src';
 import { importFromString } from 'module-from-string'
 import { getExportedTypeNames } from '../src/getExportedTypeNames';
-import { IMockVitePlugin } from '../src/types';
+
+export interface IMockVitePlugin {
+  load(id: string): string
+  buildEnd(error?: Error): void
+}
 
 describe('basic', () => {
   it('to have only the schemas of types (and interfaces), that was exported', async () => {

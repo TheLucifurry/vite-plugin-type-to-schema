@@ -8,13 +8,15 @@
     ".": "./dist/index.js"
   },
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "dev": "npm run build -- --watch",
     "build": "rimraf ./dist && tsup src/index.ts --format esm --dts",
-    "test": "vitest --watch"
+    "test": "vitest --watch",
+    "test_manual": "cd ./tests/manual && vite build -w"
   },
   "keywords": [
     "vite",
@@ -31,9 +33,11 @@
     "ts-json-schema-generator": "^1.1.1"
   },
   "devDependencies": {
+    "@types/node": "^18.7.19",
     "module-from-string": "^3.3.0",
     "rimraf": "^3.0.2",
     "tsup": "^6.2.3",
+    "vite": "^2.9.0",
     "vitest": "^0.23.4"
   }
 }
