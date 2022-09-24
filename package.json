@@ -16,7 +16,12 @@
     "dev": "npm run build -- --watch",
     "build": "rimraf ./dist && tsup src/index.ts --format esm --dts",
     "test": "vitest --watch",
-    "test_manual": "cd ./tests/manual && vite build -w"
+    "test_manual": "cd ./tests/manual && vite build -w",
+    "version:patch": "npm version patch --force",
+    "version:minor": "npm version minor --force",
+    "version:major": "npm version major --force",
+    "prepare": "npm run build",
+    "postversion": "git push && npm publish"
   },
   "keywords": [
     "vite",
@@ -27,6 +32,14 @@
     "ts-to-json-schema"
   ],
   "author": "Lucifurry",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheLucifurry/vite-plugin-type-to-schema.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheLucifurry/vite-plugin-type-to-schema/issues"
+  },
+  "homepage": "https://github.com/TheLucifurry/vite-plugin-type-to-schema#readme",
   "license": "MIT",
   "peerDependencies": {
     "vite": "^2.9.0"
