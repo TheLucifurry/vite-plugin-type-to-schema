@@ -21,7 +21,7 @@ export default defineConfig({
 
 ## ⚙️ Options 
 [Source](./src/types.ts#L12)
-## name(optionality): defaultValue // Description
+#### name(optionality): defaultValue // Description
 ```js
 typeToSchema({
   suffix?: '?schema' // Import path suffix
@@ -29,3 +29,7 @@ typeToSchema({
   options?: {} // https://github.com/vega/ts-json-schema-generator#options
 })
 ```
+
+## 📃 Details
+
+See [this test](./tests/compile.test.ts) and [fixture](./tests/fixtures/richType.ts) to learn behaviour of schema compiling
