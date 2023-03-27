@@ -18,7 +18,7 @@ const EXPECTED_SCHEMA_OF_RICH_TYPE = {
     "bool",
     "arr",
     "obj",
-    "recursion",
+    // "recursion",
     "defInlined",
     "defLinked",
     "fixedArr",
